@@ -1,5 +1,5 @@
 import { FC, useRef } from "react";
-import photo_profile from "../assets/_Y0A1242-Perfil-lowquality.jpg";
+import photo_profile from "../assets/profile.jpg";
 import budget_app from "../assets/BudgetApp.png";
 import lp_travelers from "../assets/LP-Travelers.png";
 
