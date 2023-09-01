@@ -2,7 +2,7 @@ import { FC } from "react";
 
 const NavBar: FC = () => {
   return (
-    <div className="bg-main flex w-full max-w-7xl items-center justify-between p-6">
+    <div className="bg-main flex w-full max-w-7xl items-center justify-between gap-4 p-6">
       <h1 className="text-title border-b-title border-b text-2xl font-light">
         Portfolio
       </h1>

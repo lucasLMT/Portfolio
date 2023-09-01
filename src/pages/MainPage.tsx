@@ -1,14 +1,17 @@
-import { FC, useRef } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import photo_profile from "../assets/profile.jpg";
 import budget_app from "../assets/BudgetApp.png";
 import lp_travelers from "../assets/LP-Travelers.png";
+import DropDownBox from "./../components/DropDownBox";
 
 const MainPage: FC = () => {
-  const qualifications = useRef<HTMLUListElement>(null);
-
-  const handleClickQualifications = () => {
-    qualifications.current?.classList.toggle("hidden");
-  };
+  const qualifications_array = [
+    "Bachelor Degree in Computer Engineering",
+    "7 years of experience as a developer",
+    "Front End: React.js, Tailwindcss, Typescript",
+    "Back End: Python, Fast API, Django",
+    "Databases: MySQL, Postgres, MongoDB, DynamoDB",
+  ];
 
   return (
     <div className="sm:grid sm:grid-cols-[1fr_2fr]">
@@ -28,63 +31,7 @@ const MainPage: FC = () => {
             </small>
           </div>
         </div>
-        <div
-          className="border-title text-title m-4 grid rounded-xl border p-2 sm:m-2 sm:mt-4"
-          onClick={handleClickQualifications}
-        >
-          <h3 className="text-2lx mb-3 mt-2 text-center font-medium">
-            Qualifications
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              className="ml-2 inline-block h-5 w-5 sm:hidden"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
-              />
-            </svg>
-          </h3>
-          <ul
-            className="child:pb-1 hidden text-sm transition-transform duration-300 ease-linear sm:block"
-            ref={qualifications}
-          >
-            <li className="relative items-center text-white">
-              <div className="bg-bkg/20 absolute -left-1 z-10 h-5/6 w-2"></div>
-              <span className="relative z-20">
-                Bachelor Degree in Computer Engineering
-              </span>
-            </li>
-            <li className="relative">
-              <div className="bg-bkg/20 absolute -left-1 top-0 z-10 h-5/6 w-2"></div>
-              <span className="relative z-20">
-                7 years of experience as a developer
-              </span>
-            </li>
-            <li className="relative">
-              <div className="bg-bkg/20 absolute -left-1 top-0 z-10 h-5/6 w-2"></div>
-              <span className="relative z-20">
-                Front End: React.js, Tailwindcss, Typescript
-              </span>
-            </li>
-            <li className="relative">
-              <div className="bg-bkg/20 absolute -left-1 top-0 z-10 h-5/6 w-2"></div>
-              <span className="relative z-20">
-                Back End: Python, Fast API, Django
-              </span>
-            </li>
-            <li className="relative">
-              <div className="bg-bkg/20 absolute -left-1 top-0 z-10 h-5/6 w-2"></div>
-              <span className="relative z-20">
-                Databases: MySQL, Postgres, MongoDB, DynamoDB
-              </span>
-            </li>
-          </ul>
-        </div>
+        <DropDownBox title="Qualifications" items={qualifications_array} />
       </div>
       <div className="relative justify-center">
         <div className="border-t-bkg border-r-bkg absolute right-0 top-0 z-10 border border-b-[7rem] border-l-[3rem] border-r-[3rem] border-t-[7rem] border-white"></div>
