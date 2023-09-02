@@ -12,6 +12,7 @@ const DropDownBox: FC<DropDownBoxProps> = ({ title, items }) => {
   const qualifications_arrow = useRef<SVGSVGElement>(null);
   const [qualificationsBase, setQualificationsBase] = useState(0);
   const [qualificationsExpanded, setQualificationsExpanded] = useState(0);
+  const SMALL_SCREEN = 640;
 
   useEffect(() => {
     if (qualificationsBase === 0) {
@@ -34,7 +35,7 @@ const DropDownBox: FC<DropDownBoxProps> = ({ title, items }) => {
     }
 
     function handleWindowResize() {
-      if (window.innerWidth < 640) {
+      if (window.innerWidth < SMALL_SCREEN) {
         box_qualifications.current?.style.setProperty(
           "height",
           qualificationsBase + "px",
@@ -72,7 +73,7 @@ const DropDownBox: FC<DropDownBoxProps> = ({ title, items }) => {
   });
 
   const handleClickQualifications = () => {
-    if (window.innerWidth < 640) {
+    if (window.innerWidth < SMALL_SCREEN) {
       if (qualifications.current?.classList.contains("expanded")) {
         box_qualifications.current?.style.setProperty(
           "height",
@@ -90,7 +91,6 @@ const DropDownBox: FC<DropDownBoxProps> = ({ title, items }) => {
           (qualifications.current?.offsetHeight || 0) + "px",
         );
         qualifications_arrow.current?.classList.toggle("rotate-180");
-        console.log(qualificationsExpanded);
       }
       qualifications.current?.classList.toggle("expanded");
     }

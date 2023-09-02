@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC } from "react";
 import photo_profile from "../assets/profile.jpg";
 import budget_app from "../assets/BudgetApp.png";
 import lp_travelers from "../assets/LP-Travelers.png";
@@ -34,7 +34,7 @@ const MainPage: FC = () => {
         <DropDownBox title="Qualifications" items={qualifications_array} />
       </div>
       <div className="relative justify-center">
-        <div className="border-t-bkg border-r-bkg absolute right-0 top-0 z-10 border border-b-[7rem] border-l-[3rem] border-r-[3rem] border-t-[7rem] border-white"></div>
+        <div className="border-t-bkg border-r-bkg absolute right-0 top-0 z-10 border border-b-[7rem] border-l-[3rem] border-r-[3rem] border-t-[7rem] border-white max-sm:-top-8"></div>
         <div className="mx-auto w-11/12 gap-8 lg:flex">
           <div className="divide-main relative z-20 mx-auto mt-8 grid w-4/5 auto-rows-min justify-center gap-4 divide-y-2">
             <h2 className="text-center text-4xl font-medium">
@@ -69,8 +69,8 @@ const MainPage: FC = () => {
         <h2 className="border-main mx-auto mt-8 w-4/5 border-b-2 pb-4 text-center text-4xl font-medium lg:w-11/12">
           Projects
         </h2>
-        <div className="m-8 mx-auto w-4/5 gap-8 lg:flex">
-          <div className="mt-4 grid w-full items-center rounded-xl p-2 text-center shadow-lg lg:mt-0 lg:w-1/2">
+        <div className="m-8 mx-auto w-4/5 gap-8 lg:flex lg:w-11/12">
+          <div className="mt-4 grid w-full items-center rounded-xl p-1 text-center shadow-lg lg:mt-0 lg:w-1/2">
             <div className="bg-main rounded-xl p-2">
               <a href="https://lucaslmt.github.io/BudgetApp" target="_blank">
                 <img src={budget_app} alt="" className="" />
@@ -92,7 +92,7 @@ const MainPage: FC = () => {
               </a>
             </p>
           </div>
-          <div className="mt-4 grid w-full items-center rounded-xl p-2 text-center shadow-lg lg:mt-0 lg:w-1/2">
+          <div className="mt-4 grid w-full items-center rounded-xl p-1 text-center shadow-lg lg:mt-0 lg:w-1/2">
             <div className="bg-bkg rounded-xl p-2">
               <a
                 href="https://lucaslmt.github.io/TravelersLandingPage/"
